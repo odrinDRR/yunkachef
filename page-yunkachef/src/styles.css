@@ -1,0 +1,105 @@
+:root {
+  /* Variables de Color (Light Mode adaptado al logo) */
+  --bg-color: #ffffff; /* Blanco puro como el logo */
+  --text-color: #333333;
+  --card-bg: #ffffff;
+  --primary-color: #e31837; /* Rojo del logo */
+  --secondary-color: #777777;
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #1EBE5D;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body.dark-theme {
+  --bg-color: #1a1a1a; 
+  --text-color: #f5f5f5;
+  --card-bg: #2d2d2d;
+  --primary-color: #ff3b5c; /* Rojo más brillante para contraste en oscuro */
+  --secondary-color: #aaaaaa;
+  --border-color: #444444;
+  --shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Reset y Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilidades Mobile First */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px; /* Espacio para el banner flotante */
+  background-color: var(--bg-color);
+}
+
+/* Ajustes para Escritorio (Simulación del borde del logo y fondo de helado) */
+@media (min-width: 601px) {
+  body {
+    /* Lluvia de colores (Chispas de helado) usando un patrón SVG */
+    background-color: #fff5f7; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='14' height='6' rx='3' x='20' y='20' fill='%23e31837' transform='rotate(30 27 23)'/%3E%3Crect width='14' height='6' rx='3' x='80' y='15' fill='%234ECDC4' transform='rotate(-45 87 18)'/%3E%3Crect width='14' height='6' rx='3' x='50' y='60' fill='%23FFE66D' transform='rotate(15 57 63)'/%3E%3Crect width='14' height='6' rx='3' x='90' y='80' fill='%23FF6B6B' transform='rotate(70 97 83)'/%3E%3Crect width='14' height='6' rx='3' x='15' y='90' fill='%238A2BE2' transform='rotate(-20 22 93)'/%3E%3Crect width='14' height='6' rx='3' x='100' y='45' fill='%23FFB6C1' transform='rotate(45 107 48)'/%3E%3Crect width='14' height='6' rx='3' x='40' y='100' fill='%23e31837' transform='rotate(-60 47 103)'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    padding-top: 40px;
+    padding-bottom: 0; /* Eliminado para que el borde toque el final */
+  }
+  
+  body.dark-theme {
+    background-color: #1a1012;
+    /* Las mismas chispas pero sobre fondo oscuro */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='14' height='6' rx='3' x='20' y='20' fill='%23e31837' transform='rotate(30 27 23)'/%3E%3Crect width='14' height='6' rx='3' x='80' y='15' fill='%234ECDC4' transform='rotate(-45 87 18)'/%3E%3Crect width='14' height='6' rx='3' x='50' y='60' fill='%23FFE66D' transform='rotate(15 57 63)'/%3E%3Crect width='14' height='6' rx='3' x='90' y='80' fill='%23FF6B6B' transform='rotate(70 97 83)'/%3E%3Crect width='14' height='6' rx='3' x='15' y='90' fill='%238A2BE2' transform='rotate(-20 22 93)'/%3E%3Crect width='14' height='6' rx='3' x='100' y='45' fill='%23FFB6C1' transform='rotate(45 107 48)'/%3E%3Crect width='14' height='6' rx='3' x='40' y='100' fill='%23e31837' transform='rotate(-60 47 103)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    /* Simula las ondas rojas del logo en la parte superior y a los lados */
+    border-top: 12px dotted var(--primary-color);
+    border-left: 12px dotted var(--primary-color);
+    border-right: 12px dotted var(--primary-color);
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    /* Ocultamos overflow para que el header no se salga de las esquinas redondeadas */
+    overflow: hidden; 
+    min-height: calc(100vh - 40px); /* Para que cubra hasta el final exacto de la pantalla restando el padding-top */
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Botones genéricos */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

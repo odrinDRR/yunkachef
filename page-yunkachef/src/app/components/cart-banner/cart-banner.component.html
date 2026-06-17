@@ -1,0 +1,11 @@
+<div class="banner-container animate-slide-up" *ngIf="(totalItems$ | async)! > 0">
+  <div class="banner-content">
+    <div class="info">
+      <span class="total-items">Ver mi Pedido ({{ totalItems$ | async }} productos)</span>
+      <span class="total-amount">\${{ (totalAmount$ | async)?.toFixed(2) }}</span>
+    </div>
+    <button class="send-btn" (click)="sendOrder()">
+      Enviar por WhatsApp 💬
+    </button>
+  </div>
+</div>

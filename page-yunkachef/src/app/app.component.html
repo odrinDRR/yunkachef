@@ -1,0 +1,20 @@
+<div class="container">
+  <app-header></app-header>
+  
+  <main>
+    <app-category-tabs (categoryChanged)="onCategoryChanged($event)"></app-category-tabs>
+    
+    <div class="products-grid">
+      <app-product-card 
+        *ngFor="let product of filteredProducts" 
+        [product]="product">
+      </app-product-card>
+      
+      <div *ngIf="filteredProducts.length === 0" class="no-products">
+        <p>No hay productos en esta categoría.</p>
+      </div>
+    </div>
+  </main>
+  
+  <app-cart-banner></app-cart-banner>
+</div>
