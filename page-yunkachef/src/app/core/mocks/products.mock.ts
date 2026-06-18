@@ -40,5 +40,21 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 3.00,
     imageUrl: 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
     category: 'Helados Populares'
+  },
+  {
+    id: 'p6',
+    name: 'Torta de Cumpleaños Mágica',
+    description: 'Bizcocho esponjoso relleno de crema pastelera y decorado con chispas de colores, ideal para celebrar.',
+    price: 15.00,
+    imageUrl: 'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
+    category: 'Tortas de cumpleaños'
+  },
+  {
+    id: 'p7',
+    name: 'Torta Elegante de 15 Años',
+    description: 'Espectacular torta de tres pisos cubierta de fondant blanco con detalles en rosa pastel.',
+    price: 45.00,
+    imageUrl: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
+    category: 'Tortas de 15 años'
   }
 ];

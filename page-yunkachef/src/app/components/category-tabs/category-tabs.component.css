@@ -3,10 +3,31 @@
   overflow-x: auto;
   padding: 16px 20px;
   gap: 12px;
-  scrollbar-width: none; /* Firefox */
+  /* Ocultamos scrollbar por defecto (para móvil) */
+  scrollbar-width: none; 
 }
 .tabs-container::-webkit-scrollbar {
-  display: none; /* Safari/Chrome */
+  display: none;
+}
+
+/* En escritorio (más de 600px) mostramos la barra de scroll personalizada */
+@media (min-width: 601px) {
+  .tabs-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    padding-bottom: 12px; /* Espacio extra para la barra */
+  }
+  .tabs-container::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+  }
+  .tabs-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .tabs-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
 }
 .tab-btn {
   padding: 8px 16px;
